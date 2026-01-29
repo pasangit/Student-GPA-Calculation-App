@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
-import 'pages/add_subject_page.dart';
-import 'pages/attendance_page.dart';
-import 'models/subject.dart';
+import 'home_page.dart';
+import 'add_subject_page.dart';
+import 'student_page.dart';
+import 'subject.dart';
+
+List<Subject> subjects = [];
 
 void main() {
   runApp(const GPAApp());
@@ -15,17 +17,14 @@ class GPAApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'GPA & Attendance Manager',
+      title: 'GPA Calculator',
       theme: ThemeData(primarySwatch: Colors.indigo),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
-        '/add': (context) => AddSubjectPage(),
-        '/attendance': (context) => AttendancePage(),
+        '/': (context) => const StudentPage(),
+        '/home': (context) => HomePage(),        
+        '/add': (context) =>  AddSubjectPage(),
       },
     );
   }
 }
-
-// Shared subject list for simplicity
-List<Subject> subjects = [];
