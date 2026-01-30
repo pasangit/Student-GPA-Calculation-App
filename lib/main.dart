@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'student_page.dart';
+import 'home_page.dart';
+import 'add_subject_page.dart';
+import 'subject.dart';
+
+List<Subject> subjects = [];
 
 void main() {
   runApp(const GPAApp());
@@ -11,10 +17,17 @@ class GPAApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'GPA & Attendance Manager',
-      theme: ThemeData(primarySwatch: Colors.indigo),
-      
-      
+      title: 'GPA Calculator',
+      theme: ThemeData(
+        primaryColor: const Color(0xff2563EB),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo),
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const StudentPage(),
+        '/home': (context) => HomePage(),
+        '/add': (context) => AddSubjectPage(),
+      },
     );
   }
 }
