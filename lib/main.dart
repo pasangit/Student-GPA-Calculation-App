@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'student_page.dart';
+import 'home_page.dart';
+import 'add_subject_page.dart';
+import 'subject.dart';
 
 List<Subject> subjects = [];
 
@@ -15,12 +18,15 @@ class GPAApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GPA Calculator',
-      theme: ThemeData(primarySwatch: Colors.indigo),
+      theme: ThemeData(
+        primaryColor: const Color(0xff2563EB),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo),
+      ),
       initialRoute: '/',
       routes: {
         '/': (context) => const StudentPage(),
-        '/home': (context) => HomePage(),        
-        '/add': (context) =>  AddSubjectPage(),
+        '/home': (context) => HomePage(),
+        '/add': (context) => AddSubjectPage(),
       },
     );
   }
