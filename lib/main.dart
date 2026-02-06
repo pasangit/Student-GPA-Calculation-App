@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'student_page.dart';
+import 'home_page.dart';
+import 'add_subject_page.dart';
+import 'subject.dart';
 
 List<Subject> subjects = [];
 
